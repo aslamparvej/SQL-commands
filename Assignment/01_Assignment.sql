@@ -49,3 +49,16 @@
 -- UPDATE employee 
 -- SET  comm = 1400, salary=1250
 -- WHERE emp_id = 7654;
+
+-- 1. List the emps who joined in the year 1981. 
+-- SELECT * FROM employee
+-- WHERE hire_date<('1981-12-31') AND hire_date>('1981-01-01');
+
+-- 2. List the total information of EMP table along with DNAME and Loc of all the 
+-- emps Working Under ‘ACCOUNTING’ & ‘RESEARCH’. 
+
+SELECT emp.*, dept.dept_loc, dept.dept_name FROM employee AS emp, department AS dept
+WHERE dept.dept_name IN ("ACCOUNTING" ,"RESEARCH") AND emp.dept_no = dept.dept_no;
+
+
+
